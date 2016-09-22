@@ -10,25 +10,54 @@ public class InteractRunner {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        try{
-            Calculate calculate = new Calculate();
-            String exit = "no";
+        Calculate calculate = new Calculate();
+        int a, b;
+        String c = " ";
 
-            while (!exit.equals("yes")) {
-                System.out.println("Enter first arg: ");
-                int a = sc.nextInt();
-                System.out.println("Enter second arg: ");
-                int b = sc.nextInt();
-                calculate.add(a, b);
-                System.out.println("Result: " + calculate.getResult());
-                calculate.cleanResult();
 
-                System.out.println("Exit : yes/no ");
-                exit = sc.next();
+
+       do { System.out.println("Что будем делать? ");
+            c = sc.next();
+
+            switch (c) {
+
+                case "+":
+                    System.out.println("Введите первое число:");
+                    a= sc.nextInt();
+                    System.out.println("Введите второе число");
+                    b = sc.nextInt();
+                    calculate.add(a, b);
+                    System.out.println("Результат: " + calculate.getResult());
+                    break;
+
+                case "-":
+                    System.out.println("Введите первое число:");
+                    a= sc.nextInt();
+                    System.out.println("Введите второе число");
+                    b = sc.nextInt();
+                    calculate.div(a, b);
+                    System.out.println("Результат: " + calculate.getResult());
+                    break;
+
+                case "*":
+                    System.out.println("Введите первое число:");
+                    a= sc.nextInt();
+                    System.out.println("Введите второе число");
+                    b = sc.nextInt();
+                    calculate.mult(a, b);
+                    System.out.println("Результат: " + calculate.getResult());
+                    break;
+
+                case "/":
+                    System.out.println("Введите первое число:");
+                    a= sc.nextInt();
+                    System.out.println("Введите второе число");
+                    b = sc.nextInt();
+                    calculate.sub(a, b);
+                    System.out.println("Результат: " + calculate.getResult());
+                    break;
             }
-        }finally {
-            sc.close();
-        }
 
+        }  while (!c.equals("exit"));
     }
 }
