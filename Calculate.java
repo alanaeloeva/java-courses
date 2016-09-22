@@ -1,12 +1,29 @@
-public class Calculate {
-    public static void main(String[] args) {
+package myPack;
 
+import java.util.Scanner;
 
-      System.out.println("Calculate...");
-      int a = Integer.valueOf(args[0]);
-      int b = Integer.valueOf(args[1]);
-      int sum = a+b;
-      System.out.println("sum = " + sum);
+/**
+ * Created by home on 21.08.2016.
+ */
+public class Calculate{
+
+    private int result;
+
+    public void add(int...params){
+
+        for(Integer param: params ){
+
+            this.result+= param;
+        }
+    }
+
+    public int getResult(){
+        return this.result;
+    }
+
+    public void cleanResult(){
+
+        this.result = 0;
 
     }
 }
