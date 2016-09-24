@@ -14,50 +14,43 @@ public class InteractRunner {
         int a, b;
         String c = " ";
 
-
-
-       do { System.out.println("Что будем делать? ");
+        do { System.out.println("Что будем делать? ");
             c = sc.next();
 
-            switch (c) {
+            if (c.equals("+")) {
+                System.out.println("Введите первое число:");
+                a = sc.nextInt();
+                System.out.println("Введите второе число");
+                b = sc.nextInt();
+                calculate.add(a, b);
+                System.out.println("Результат: " + calculate.getResult());
 
-                case "+":
-                    System.out.println("Введите первое число:");
-                    a= sc.nextInt();
-                    System.out.println("Введите второе число");
-                    b = sc.nextInt();
-                    calculate.add(a, b);
-                    System.out.println("Результат: " + calculate.getResult());
-                    break;
+            } else if (c.equals("-")) {
+                System.out.println("Введите первое число:");
+                a = sc.nextInt();
+                System.out.println("Введите второе число");
+                b = sc.nextInt();
+                calculate.div(a, b);
+                System.out.println("Результат: " + calculate.getResult());
 
-                case "-":
-                    System.out.println("Введите первое число:");
-                    a= sc.nextInt();
-                    System.out.println("Введите второе число");
-                    b = sc.nextInt();
-                    calculate.div(a, b);
-                    System.out.println("Результат: " + calculate.getResult());
-                    break;
+            } else if (c.equals("*")) {
+                System.out.println("Введите первое число:");
+                a = sc.nextInt();
+                System.out.println("Введите второе число");
+                b = sc.nextInt();
+                calculate.mult(a, b);
+                System.out.println("Результат: " + calculate.getResult());
 
-                case "*":
-                    System.out.println("Введите первое число:");
-                    a= sc.nextInt();
-                    System.out.println("Введите второе число");
-                    b = sc.nextInt();
-                    calculate.mult(a, b);
-                    System.out.println("Результат: " + calculate.getResult());
-                    break;
+            } else if (c.equals("/")) {
+                System.out.println("Введите первое число:");
+                a = sc.nextInt();
+                System.out.println("Введите второе число");
+                b = sc.nextInt();
+                calculate.sub(a, b);
+                System.out.println("Результат: " + calculate.getResult());
 
-                case "/":
-                    System.out.println("Введите первое число:");
-                    a= sc.nextInt();
-                    System.out.println("Введите второе число");
-                    b = sc.nextInt();
-                    calculate.sub(a, b);
-                    System.out.println("Результат: " + calculate.getResult());
-                    break;
             }
 
         }  while (!c.equals("exit"));
     }
-}
+ }
